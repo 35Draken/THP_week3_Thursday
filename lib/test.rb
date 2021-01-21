@@ -19,7 +19,13 @@ def crypto(page)
     value_of_crypto.each do |value|
       array_value << value.text
     end
-mon_hash = Hash[array_name.zip array_value.map]
-puts mon_hash
+
+    array_value_of_crypto = array_value.map { |word| word.gsub('$', '') }
+    mon_hash = Hash[array_name.zip array_value_of_crypto]
+
+    mon_hash.each do |name , value|
+        final_crypto = {name => value.delete(',').to_f}
+        puts [final_crypto]
+    end
 end
 crypto(scrapper)
