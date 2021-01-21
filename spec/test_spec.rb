@@ -1,7 +1,8 @@
 require_relative '../lib/trader.rb'
 
-describe "make_hash method, it should return a hash with both arrays" do
-    it "Wrong type" do
-        expect(scrapper).to have_link("About Developer Portal", href: 'https://coinmarketcap.com/all/views/all/')
+
+describe  "get_a_page method" do
+    it "Should fetch a page and none return nil" do
+      expect(scrapper).not_to be_nil
     end
-end
+  end
